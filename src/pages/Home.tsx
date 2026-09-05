@@ -42,7 +42,7 @@ const Home: React.FC = () => {
         <address>Phase 1, Sec 5, Blk 4, Lot 21 Belvedere Towne 1, Brgy. Paradahan 1, Tanza, Philippines</address>
       </div>
       <div className="home-location__details">
-        <p>Food &amp; Drink · $ · 2.2 mi</p>
+        <p>Food &amp; Drink · Open 1:30 pm to 8 pm</p>
         <a href="https://www.facebook.com/search/pages/?q=Kaori%27s%20Snackhouse%20Tanza" target="_blank" rel="noreferrer" className="facebook-link">Find us on Facebook <span aria-hidden="true">↗</span></a>
       </div>
     </section>
