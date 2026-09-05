@@ -428,7 +428,7 @@
           "tags": ["waffle", "chocolate", "fudge"]
         },
         {
-          "id": "waffle6":
+          "id": "waffle6",
           "name": "Chocolate Fudge (2PCS)",
           "description": "Two rich chocolate fudge waffles",
           "price": 38,
@@ -559,7 +559,7 @@
           "tags": ["soda", "sparkling", "strawberry", "12oz"]
         },
         {
-          "id": "soda3":
+          "id": "soda3",
           "name": "Strawberry Sparkling Soda (16oz)",
           "description": "Strawberry flavored sparkling soda - 16oz",
           "price": 35,
@@ -665,7 +665,7 @@
           "tags": ["yakult", "soda", "probiotic", "12oz"]
         },
         {
-          "id": "yakult2":
+          "id": "yakult2",
           "name": "Sparkling Yakult Soda (16oz)",
           "description": "Refreshing sparkling Yakult soda - 16oz",
           "price": 50,
@@ -681,7 +681,7 @@
       "description": "Delicious soda floats with ice cream",
       "items": [
         {
-          "id": "float1":
+          "id": "float1",
           "name": "Fruity Soda Float (12oz)",
           "description": "Fruity soda with ice cream float - 12oz",
           "price": 35,
@@ -690,7 +690,7 @@
           "tags": ["float", "soda", "ice-cream", "fruity", "12oz"]
         },
         {
-          "id": "float2":
+          "id": "float2",
           "name": "Fruity Soda Float (16oz)",
           "description": "Fruity soda with ice cream float - 16oz",
           "price": 45,
@@ -699,7 +699,7 @@
           "tags": ["float", "soda", "ice-cream", "fruity", "16oz"]
         },
         {
-          "id": "float3":
+          "id": "float3",
           "name": "Coke Float (12oz)",
           "description": "Classic Coke with ice cream float - 12oz",
           "price": 30,
@@ -708,7 +708,7 @@
           "tags": ["float", "coke", "ice-cream", "12oz"]
         },
         {
-          "id": "float4":
+          "id": "float4",
           "name": "Coke Float (16oz)",
           "description": "Classic Coke with ice cream float - 16oz",
           "price": 40,
@@ -724,7 +724,7 @@
       "description": "Creamy homemade ice cream with toppings and syrups",
       "items": [
         {
-          "id": "ice1":
+          "id": "ice1",
           "name": "1 Scoop Ice Cream",
           "description": "1 scoop ice cream with 1 free topping and 1 syrup",
           "price": 10,
@@ -733,7 +733,7 @@
           "tags": ["ice-cream", "scoop", "topping", "syrup"]
         },
         {
-          "id": "ice2":
+          "id": "ice2",
           "name": "2 Scoops Ice Cream",
           "description": "2 scoops ice cream with 2 free toppings and 1 syrup",
           "price": 18,
@@ -742,7 +742,7 @@
           "tags": ["ice-cream", "scoops", "topping", "syrup"]
         },
         {
-          "id": "ice3":
+          "id": "ice3",
           "name": "3 Scoops Ice Cream",
           "description": "3 scoops ice cream with 3 free toppings and 1 syrup",
           "price": 25,
@@ -758,7 +758,7 @@
       "description": "Delicious hotdog sandwiches and meal combinations",
       "items": [
         {
-          "id": "hotdog1":
+          "id": "hotdog1",
           "name": "Regular Hotdog",
           "description": "Classic hotdog sandwich",
           "price": 25,
@@ -767,7 +767,7 @@
           "tags": ["hotdog", "sandwich", "classic"]
         },
         {
-          "id": "hotdog2":
+          "id": "hotdog2",
           "name": "B1T1 Regular Hotdog",
           "description": "Buy one regular hotdog, get one free",
           "price": 45,
@@ -776,7 +776,7 @@
           "tags": ["hotdog", "deal", "bogo"]
         },
         {
-          "id": "hotdog3":
+          "id": "hotdog3",
           "name": "Regular Hotdog w/ Fruity Soda",
           "description": "Regular hotdog with fruity soda",
           "price": 45,
@@ -785,7 +785,7 @@
           "tags": ["hotdog", "soda", "combo"]
         },
         {
-          "id": "hotdog4":
+          "id": "hotdog4",
           "name": "Regular Hotdog w/ Coke Float",
           "description": "Regular hotdog with Coke float",
           "price": 50,
@@ -794,7 +794,7 @@
           "tags": ["hotdog", "float", "combo"]
         },
         {
-          "id": "hotdog5":
+          "id": "hotdog5",
           "name": "Overload Hotdog with Fries",
           "description": "Overload hotdog served with fries",
           "price": 50,
@@ -803,7 +803,7 @@
           "tags": ["hotdog", "overload", "fries"]
         },
         {
-          "id": "hotdog6":
+          "id": "hotdog6",
           "name": "Overload Hotdog with Fries and Fruity Soda",
           "description": "Overload hotdog with fries and fruity soda",
           "price": 70,
@@ -812,7 +812,7 @@
           "tags": ["hotdog", "overload", "fries", "soda"]
         },
         {
-          "id": "hotdog7":
+          "id": "hotdog7",
           "name": "Overload Hotdog with Fries and Small Coke Float",
           "description": "Overload hotdog with fries and small Coke float",
           "price": 75,
@@ -821,7 +821,7 @@
           "tags": ["hotdog", "overload", "fries", "float"]
         },
         {
-          "id": "hotdog8":
+          "id": "hotdog8",
           "name": "Hungarian Overload",
           "description": "Hungarian style overload hotdog",
           "price": 60,
@@ -830,7 +830,7 @@
           "tags": ["hotdog", "hungarian", "overload"]
         },
         {
-          "id": "hotdog9":
+          "id": "hotdog9",
           "name": "Overload Hungarian with Fries and Fruity Soda",
           "description": "Overload Hungarian hotdog with fries and fruity soda",
           "price": 90,
@@ -846,7 +846,7 @@
       "description": "Sauces, toppings and extras to customize your meal",
       "items": [
         {
-          "id": "sauce1":
+          "id": "sauce1",
           "name": "Teriyaki Sauce",
           "description": "Sweet and savory teriyaki sauce",
           "price": 0,
@@ -855,7 +855,7 @@
           "tags": ["sauce", "teriyaki", "asian"]
         },
         {
-          "id": "sauce2":
+          "id": "sauce2",
           "name": "Peanut Sauce",
           "description": "Rich and creamy peanut sauce",
           "price": 0,
@@ -864,7 +864,7 @@
           "tags": ["sauce", "peanut", "asian"]
         },
         {
-          "id": "sauce3":
+          "id": "sauce3",
           "name": "BBQ Sauice",
           "description": "Classic barbecue sauce",
           "price": 0,
@@ -873,7 +873,7 @@
           "tags": ["sauce", "bbq", "smoky"]
         },
         {
-          "id": "sauce4":
+          "id": "sauce4",
           "name": "Beef Oyster Sauce",
           "description": "Rich beef oyster sauce",
           "price": 0,
@@ -882,7 +882,7 @@
           "tags": ["sauce", "beef", "oyster"]
         },
         {
-          "id": "sauce5":
+          "id": "sauce5",
           "name": "Toyomansi",
           "description": "Filipino style soy sauce with calamansi",
           "price": 0,
@@ -891,7 +891,7 @@
           "tags": ["sauce", "filipino", "soy"]
         },
         {
-          "id": "sauce6":
+          "id": "sauce6",
           "name": "Sweet Chili Sauce",
           "description": "Sweet and spicy chili sauce",
           "price": 0,
@@ -900,7 +900,7 @@
           "tags": ["sauce", "sweet", "chili"]
         },
         {
-          "id": "addon1":
+          "id": "addon1",
           "name": "Cheese Add-on",
           "description": "Extra cheese topping",
           "price": 10,
@@ -909,7 +909,7 @@
           "tags": ["addon", "cheese", "topping"]
         },
         {
-          "id": "addon2":
+          "id": "addon2",
           "name": "Egg Add-on",
           "description": "Extra egg topping",
           "price": 15,
@@ -918,7 +918,7 @@
           "tags": ["addon", "egg", "topping"]
         },
         {
-          "id": "addon3":
+          "id": "addon3",
           "name": "Ham Add-on",
           "description": "Extra ham topping",
           "price": 10,
@@ -927,7 +927,7 @@
           "tags": ["addon", "ham", "topping"]
         },
         {
-          "id": "addon4":
+          "id": "addon4",
           "name": "Nata Add-on",
           "description": "Nata de coco topping",
           "price": 5,
@@ -936,7 +936,7 @@
           "tags": ["addon", "nata", "topping"]
         },
         {
-          "id": "addon5":
+          "id": "addon5",
           "name": "Pearl Add-on",
           "description": "Tapioca pearl topping",
           "price": 5,
@@ -945,7 +945,7 @@
           "tags": ["addon", "pearl", "topping"]
         },
         {
-          "id": "addon6":
+          "id": "addon6",
           "name": "Black Pearl Add-on",
           "description": "Black tapioca pearl topping",
           "price": 10,
@@ -954,7 +954,7 @@
           "tags": ["addon", "black-pearl", "topping"]
         },
         {
-          "id": "addon7":
+          "id": "addon7",
           "name": "Oreo Add-on",
           "description": "Crushed Oreo topping",
           "price": 10,
@@ -963,7 +963,7 @@
           "tags": ["addon", "oreo", "topping"]
         },
         {
-          "id": "addon8":
+          "id": "addon8",
           "name": "Chocolate Add-on",
           "description": "Chocolate topping or syrup",
           "price": 10,
@@ -972,7 +972,7 @@
           "tags": ["addon", "chocolate", "topping"]
         },
         {
-          "id": "addon9":
+          "id": "addon9",
           "name": "Hotdog Add-on",
           "description": "Tender Juicy hotdog topping",
           "price": 12,
@@ -981,7 +981,7 @@
           "tags": ["addon", "hotdog", "protein"]
         },
         {
-          "id": "addon10":
+          "id": "addon10",
           "name": "Ham and Cheese Add-on",
           "description": "Ham and cheese combination topping",
           "price": 12,

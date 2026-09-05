@@ -1,135 +1,74 @@
-import useMenu from '../hooks/useMenu';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
+import { menuSections, MenuSection, MenuItem } from '../data/menu';
 
-const Menu: React.FC = () => {
-  const { menuData, loading, error } = useMenu();
+const sectionLabels: Record<string, string> = { burgers: 'Burgers', fries: 'Fries', milkshakes: 'Shakes', 'summer-drinks': 'Drinks', waffles: 'Waffles', combos: 'Combos', sodas: 'Sodas', 'fizzy-specials': 'Floats', 'ice-cream': 'Ice cream', hotdogs: 'Hotdogs', noodles: 'Noodles' };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-snackhouse-cream flex items-center justify-center">
-        <div className="animate-spin rounded-full border-4 border-snackhouse-primary/20 border-t-snackhouse-primary h-12 w-12"></div>
-        <p className="ml-4 text-snackhouse-primary/60">Loading menu...</p>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="min-h-screen bg-snackhouse-cream flex flex-col items-center justify-center py-12">
-        <h2 className="text-2xl font-bold text-snackhouse-primary mb-6">Oops!</h2>
-        <p className="text-snackhouse-brown/60 mb-8 max-w-xl text-center">
-          {error}
-        </p>
-        <a
-          href="/"
-          className="inline-block bg-snackhouse-primary hover:bg-snackhouse-primary/90 text-white px-8 py-4 rounded-lg font-medium transition-colors"
-        >
-          Back to Home
-        </a>
-      </div>
-    );
-  }
-
-  if (!menuData || menuData.categories.length === 0) {
-    return (
-      <div className="min-h-screen bg-snackhouse-cream flex flex-col items-center justify-center py-12">
-        <h2 className="text-2xl font-bold text-snackhouse-primary mb-6">No Menu Items</h2>
-        <p className="text-snackhouse-brown/60 mb-8 max-w-xl text-center">
-          It looks like there are no menu items available right now.
-        </p>
-        <a
-          href="/"
-          className="inline-block bg-snackhouse-primary hover:bg-snackhouse-primary/90 text-white px-8 py-4 rounded-lg font-medium transition-colors"
-        >
-          Back to Home
-        </a>
-      </div>
-    );
-  }
+const MenuCard = ({ section }: { section: MenuSection }) => {
+  const { addItem } = useCart();
 
   return (
-    <div className="min-h-screen bg-snackhouse-cream">
-      <header className="bg-snackhouse-primary/5 px-4 py-8 border-b border-snackhouse-primary/10">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-3xl font-bold text-center text-snackhouse-primary mb-6">
-            Our Menu
-          </h1>
-          <p className="text-center text-snackhouse-brown/60 max-w-2xl mx-auto">
-            Freshly prepared snacks and beverages made with love
-          </p>
+    <section className="menu-section" id={section.id}>
+      <div className="menu-section__heading">
+        <div>
+          <p className="eyebrow">Kaori's picks</p>
+          <h2 className="display-font">{section.name}</h2>
         </div>
-      </header>
+        <span className="menu-section__count">{section.items.length} items</span>
+      </div>
+      <div className="menu-grid">
+        {section.items.map((item) => <ConfigurableMenuItem key={item.id} item={item} addItem={addItem} />)}
+      </div>
+      {section.notes && <div className="menu-notes">{section.notes.map((note) => <p key={note}>{note}</p>)}</div>}
+    </section>
+  );
+};
 
-      <main className="max-w-7xl mx-auto px-4 py-12">
-        <div className="space-y-16">
-          {menuData.categories.map((category) => (
-            <section key={category.id}>
-              <div className="flex items-center justify-between mb-8">
-                <h2 className="text-3xl font-semibold text-snackhouse-primary">{category.name}</h2>
-                <span className="inline-block bg-snackhouse-primary/10 text-snackhouse-primary px-3 py-1 rounded text-sm">
-                  {category.items.length} items
-                </span>
-              </div>
-              {/* Optional category description */}
-              {category.id === 'drinks' && (
-                <p className="text-snackhouse-brown/60 mb-6 max-w-xl">
-                  From traditional Filipino coffee to refreshing fruit juices and indulgent shakes, our beverages are perfect for any time of day.
-                </p>
-              )}
-              {category.id === 'snacks' && (
-                <p className="text-snackhouse-brown/60 mb-6 max-w-xl">
-                  Indulge in our selection of baked goods and pastries, each made with care and authentic Filipino flavors.
-                </p>
-              )}
-              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                {category.items.map((item) => (
-                  <div
-                    key={item.id}
-                    className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-400 transform hover:-translate-y-3 group cursor-pointer"
-                  >
-                    <div className="relative h-56">
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="w-full h-full object-cover"
-                      >
-                      </img>
-                      <div className="absolute inset-0 bg-snackhouse-primary/20 opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm"></div>
-                      <div className="absolute bottom-0 left-0 right-0 bg-snackhouse-primary/90 p-2 text-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                        {item.name.split(' ')[0]}
-                      </div>
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-lg font-medium mb-2 line-clamp-1">
-                        {item.name}
-                      </h3>
-                      <p className="text-snackhouse-brown/60 mb-3 line-clamp-3">
-                        {item.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {item.tags.map((tag) => (
-                          <span key={tag} className="text-xs bg-snackhouse-primary/10 text-snackhouse-primary px-2 py-1 rounded-full">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                      <div className="flex justify-between items-center mt-4 pt-4 border-t border-snackhouse-primary/10">
-                        <span className="inline-block bg-snackhouse-primary/10 text-snackhouse-primary px-3 py-1 rounded text-sm font-medium">
-                          ${item.price.toFixed(2)}
-                        </span>
-                        <button
-                          className="inline-block bg-snackhouse-primary hover:bg-snackhouse-primary/90 text-white px-4 py-2 rounded hover:translate-y[--1px] transition-all duration-300"
-                        >
-                          Add to Cart
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-          ))}
+const ConfigurableMenuItem = ({ item, addItem }: { item: MenuItem; addItem: ReturnType<typeof useCart>['addItem'] }) => {
+  const [selections, setSelections] = useState<Record<string, string[]>>(() => Object.fromEntries((item.optionGroups || []).map((group) => [group.id, group.multiple ? [] : [group.choices[0].label]])));
+  const selectedChoices = (item.optionGroups || []).flatMap((group) => (selections[group.id] || []).map((label) => group.choices.find((choice) => choice.label === label) || group.choices[0]));
+  const selectedPrice = item.price === undefined ? undefined : (item.optionGroups || []).reduce((total, group) => {
+    const choices = (selections[group.id] || []).map((label) => group.choices.find((choice) => choice.label === label)).filter(Boolean);
+    if (group.id === 'size' || group.id === 'portion') return choices[0]?.price ?? total;
+    return total + choices.reduce((sum, choice) => sum + (choice?.price ?? 0), 0);
+  }, item.price);
+  const selectedName = selectedChoices.length ? `${item.name} (${selectedChoices.map((choice) => choice.label).join(', ')})` : item.name;
+  const updateSingle = (groupId: string, value: string) => setSelections((current) => ({ ...current, [groupId]: [value] }));
+  const toggleMultiple = (groupId: string, value: string, checked: boolean) => setSelections((current) => ({ ...current, [groupId]: checked ? [...(current[groupId] || []), value] : (current[groupId] || []).filter((choice) => choice !== value) }));
+
+  return (
+    <article className="menu-item menu-item--configurable">
+      <div className="menu-item__copy"><h3>{item.name}</h3>{item.detail && <p>{item.detail}</p>}
+        {item.optionGroups && <div className="option-fields">{item.optionGroups.map((group) => group.multiple ? <fieldset className="checkbox-options" key={group.id}><legend>{group.label}</legend>{group.choices.map((choice) => <label key={choice.label}><input type="checkbox" checked={(selections[group.id] || []).includes(choice.label)} onChange={(event) => toggleMultiple(group.id, choice.label, event.target.checked)} />{choice.label}</label>)}</fieldset> : <label key={group.id}>{group.label}<select value={selections[group.id]?.[0]} onChange={(event) => updateSingle(group.id, event.target.value)}>{group.choices.map((choice) => <option key={choice.label} value={choice.label}>{choice.label}{choice.price && group.id !== 'flavor' && group.id !== 'syrup' && group.id !== 'topping' ? ` - ₱${choice.price}` : ''}</option>)}</select></label>)}</div>}
+      </div>
+      <div className="menu-item__action">{selectedPrice !== undefined ? <strong>₱{selectedPrice}</strong> : <strong className="price-unavailable">Chat for price</strong>}<button type="button" disabled={selectedPrice === undefined} onClick={() => selectedPrice !== undefined && addItem({ id: `${item.id}-${selectedChoices.map((choice) => choice.label).join('-')}`, name: selectedName, price: selectedPrice, image: '/kaoris/logo.jpg' })} className="add-button">{selectedPrice !== undefined ? 'Add' : 'Ask'}</button></div>
+    </article>
+  );
+};
+
+const Menu: React.FC = () => {
+  const [activeSection, setActiveSection] = useState('all');
+  const { totalItems } = useCart();
+  const visibleSections = activeSection === 'all' ? menuSections : menuSections.filter((section) => section.id === activeSection);
+
+  return (
+    <div className="menu-page">
+      <header className="menu-hero">
+        <div>
+          <p className="eyebrow">Order for pickup through Facebook</p>
+          <h1 className="display-font">The menu, made for merienda.</h1>
+          <p>Fresh comfort food, bright drinks, and little treats for every kind of craving.</p>
         </div>
-      </main>
+        <Link to="/cart" className="action-button">Your order <span className="hero-cart-count">{totalItems}</span></Link>
+      </header>
+      <div className="menu-toolbar">
+        <div className="menu-tabs" role="tablist" aria-label="Menu sections">
+          <button type="button" className={activeSection === 'all' ? 'is-selected' : ''} onClick={() => setActiveSection('all')}>All</button>
+          {menuSections.map((section) => <button type="button" key={section.id} className={activeSection === section.id ? 'is-selected' : ''} onClick={() => setActiveSection(section.id)}>{sectionLabels[section.id]}</button>)}
+        </div>
+      </div>
+      <main className="menu-content">{visibleSections.map((section) => <MenuCard key={section.id} section={section} />)}</main>
     </div>
   );
 };
