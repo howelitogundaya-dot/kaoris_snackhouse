@@ -7,6 +7,7 @@ interface MenuItem {
   price: number;
   image: string;
   category: string;
+  tags: string[];
 }
 
 interface MenuCategory {
