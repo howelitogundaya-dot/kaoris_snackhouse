@@ -43,7 +43,6 @@ const Home: React.FC = () => {
       </div>
       <div className="home-location__details">
         <p>Food &amp; Drink · $ · 2.2 mi</p>
-        <p>Closed now · 88 followers · 7 friends following</p>
         <a href="https://www.facebook.com/search/pages/?q=Kaori%27s%20Snackhouse%20Tanza" target="_blank" rel="noreferrer" className="facebook-link">Find us on Facebook <span aria-hidden="true">↗</span></a>
       </div>
     </section>
