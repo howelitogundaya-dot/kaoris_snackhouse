@@ -75,6 +75,13 @@ a { color: inherit; text-decoration: none; }
 .home-order-note p:last-child { max-width: 620px; margin: 16px 0 0; color: #f9e6cf; line-height: 1.6; }
 .home-order-note .action-button { flex-shrink: 0; color: #422d24; background: #f5d58f; }
 .home-order-note .action-button:hover { background: #fff1c9; }
+.home-location { max-width: 1180px; margin: 0 auto 32px; padding: 32px 24px; display: flex; align-items: end; justify-content: space-between; gap: 36px; border-top: 1px solid rgba(94, 57, 38, .12); }
+.home-location h2 { margin: 0 0 10px; color: #422d24; font-size: 30px; }
+.home-location address { max-width: 620px; color: #7f695c; font-size: 13px; font-style: normal; line-height: 1.6; }
+.home-location__details { min-width: 270px; color: #8b7668; font-size: 12px; line-height: 1.5; }
+.home-location__details p { margin: 0 0 5px; }
+.facebook-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 9px; color: #a9472c; font-weight: 700; }
+.facebook-link span { font-size: 17px; }
 .home-footer { max-width: 1180px; margin: auto; padding: 24px; display: flex; justify-content: space-between; gap: 16px; color: #8b7668; border-top: 1px solid rgba(94, 57, 38, .12); font-size: 12px; }
 .photo-modal { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; padding: 24px; background: rgba(45, 33, 29, .72); backdrop-filter: blur(8px); }
 .photo-modal__content { position: relative; width: min(900px, 100%); max-height: calc(100vh - 48px); overflow: auto; background: #fffaf3; border-radius: 10px; box-shadow: 0 24px 80px rgba(0, 0, 0, .3); }
@@ -187,10 +194,12 @@ a { color: inherit; text-decoration: none; }
 	.home-hero__image img { min-height: 360px; }
 	.home-hero__brand-panel img { min-height: 0; }
 	.home-hero__brand-panel > p { bottom: 62px; font-size: 8px; }
-	.home-hero__actions, .section-intro, .home-order-note, .home-footer { align-items: flex-start; flex-direction: column; }
+	.home-hero__actions, .section-intro, .home-order-note, .home-location, .home-footer { align-items: flex-start; flex-direction: column; }
 	.product-tiles { grid-template-columns: repeat(2, 1fr); }
 	.product-tile { min-height: 160px; }
 	.home-order-note { margin: 0 16px 50px; padding: 30px 24px; }
+	.home-location { margin: 0 16px 20px; padding: 28px 0; gap: 18px; }
+	.home-location__details { min-width: 0; }
 	.home-footer { margin: 0 16px; }
 	.photo-modal { padding: 12px; }
 	.photo-modal__footer { align-items: flex-start; flex-direction: column; }

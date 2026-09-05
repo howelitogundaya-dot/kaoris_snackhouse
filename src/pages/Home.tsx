@@ -35,6 +35,18 @@ const Home: React.FC = () => {
 
       <section className="home-order-note"><div><p className="eyebrow">Simple ordering</p><h2 className="display-font">Pick your favorites. We will handle the rest.</h2><p>Choose your size, flavor, sauce, or add-ons in the menu. Review your order, copy the receipt, and send it to Kaori's Facebook chat.</p></div><Link to="/menu" className="action-button">Start an order</Link></section>
     </main>
+    <section className="home-location" aria-label="Kaori's Snackhouse location and social media">
+      <div>
+        <p className="eyebrow">Come and eat with us!</p>
+        <h2 className="display-font">Find Kaori's in Tanza.</h2>
+        <address>Phase 1, Sec 5, Blk 4, Lot 21 Belvedere Towne 1, Brgy. Paradahan 1, Tanza, Philippines</address>
+      </div>
+      <div className="home-location__details">
+        <p>Food &amp; Drink · $ · 2.2 mi</p>
+        <p>Closed now · 88 followers · 7 friends following</p>
+        <a href="https://www.facebook.com/search/pages/?q=Kaori%27s%20Snackhouse%20Tanza" target="_blank" rel="noreferrer" className="facebook-link">Find us on Facebook <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
     <footer className="home-footer"><span>© 2026 Kaori's Snackhouse</span><span>Fresh snacks, bright drinks, good merienda.</span></footer>
       {selectedTile && <div className="photo-modal" role="dialog" aria-modal="true" aria-label={`${selectedTile.label} menu photo`} onClick={() => setSelectedTile(null)}><div className="photo-modal__content" onClick={(event) => event.stopPropagation()}><button type="button" className="photo-modal__close" aria-label="Close photo" onClick={() => setSelectedTile(null)}>×</button><img src={selectedTile.image} alt={`${selectedTile.label} full menu`} /><div className="photo-modal__footer"><div><p className="eyebrow">Kaori's menu</p><h2 className="display-font">{selectedTile.label}</h2></div><Link to={`/menu#${selectedTile.section}`} className="action-button" onClick={() => setSelectedTile(null)}>Order from menu</Link></div></div></div>}
   </div>
