@@ -7,11 +7,11 @@ const Home: React.FC = () => {
       {/* Header with logo */}
       <header className="bg-snackhouse-primary/5 px-4 py-8 border-b border-snackhouse-primary/10">
         <div className="max-w-7xl mx-auto flex flex-col items-center">
-          <div className="relative h-12 w-12 mb-4">
+          <div className="relative h-16 w-16 mb-6">
             <img
               src="/kaoris/logo.jpg"
               alt="Kaori's Snackhouse Logo"
-              className="h-12 w-12 rounded-full object-cover ring-2 ring-snackhouse-primary/20 shadow-sm"
+              className="h-16 w-16 rounded-full object-cover ring-2 ring-snackhouse-primary/30 shadow-lg"
             >
             </img>
           </div>
@@ -26,20 +26,20 @@ const Home: React.FC = () => {
 
       <main className="max-w-7xl mx-auto px-4 py-12">
         {/* Hero Section - Most characteristic thing: Filipino snack culture */}
-        <section className="mb-16 relative overflow-hidden">
-          <div className="relative h-96 md:h-[400px] bg-snackhouse-primary/10 flex items-center justify-center overflow-hidden">
+        <section className="mb-20 relative overflow-hidden">
+          <div className="relative h-[450px] bg-snackhouse-primary/10 flex items-center justify-center overflow-hidden">
             {/* Background pattern or image */}
-            <div className="absolute inset-0 bg-[url('/kaoris/menu\\ 1.jpg')] bg-cover bg-center opacity-15"></div>
-            <div className="relative z-10 text-center space-y-6">
-              <h2 className="text-3xl font-bold text-snackhouse-primary">
+            <div className="absolute inset-0 bg-[url('/kaoris/menu\\ 1.jpg')] bg-cover bg-center opacity-20"></div>
+            <div className="relative z-10 text-center space-y-8">
+              <h2 className="text-4xl font-bold text-snackhouse-primary">
                 Merienda Made Joyful
               </h2>
-              <p className="text-snackhouse-brown/60 max-w-2xl">
+              <p className="text-snackhouse-brown/60 max-w-3xl">
                 Discover the warmth of Filipino snacking tradition, where every bite tells a story of home and heritage.
               </p>
               <Link
                 to="/menu"
-                className="inline-block bg-snackhouse-primary hover:bg-snackhouse-primary/90 text-white px-8 py-4 rounded-lg font-medium transition-colors"
+                className="inline-block bg-snackhouse-primary hover:bg-snackhouse-primary/90 text-white px-10 py-5 rounded-xl font-medium transition-colors hover:scale-[1.02]"
               >
                 Explore Our Treats
               </Link>
@@ -48,14 +48,14 @@ const Home: React.FC = () => {
         </section>
 
         {/* Featured Treats Section */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-semibold mb-8 text-center">
+        <section className="mb-20">
+          <h2 className="text-3xl font-semibold mb-10 text-center">
             Featured Treats
           </h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {/* Treat 1: Chocolate Chip Cookie */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow transform hover:-translate-y-1 group">
-              <div className="relative h-48">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
+              <div className="relative h-52">
                 <img
                   src="/kaoris/menu\\ 1.jpg"
                   alt="Chocolate Chip Cookie"
@@ -78,7 +78,7 @@ const Home: React.FC = () => {
                     $3.50
                   </span>
                   <button
-                    className="inline-block bg-snackhouse-primary hover:bg-snackhouse-primary/90 text-white px-4 py-2 rounded hover:translate-y-[-1px] transition-all"
+                    className="inline-block bg-snackhouse-primary hover:bg-snackhouse-primary/90 text-white px-4 py-2 rounded hover:translate-y[--1px] transition-all"
                   >
                     Add
                   </button>
@@ -87,8 +87,8 @@ const Home: React.FC = () => {
             </div>
 
             {/* Treat 2: Filipino Coffee */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow transform hover:-translate-y-1 group">
-              <div className="relative h-48">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
+              <div className="relative h-52">
                 <img
                   src="/kaoris/drinks\\ 1.jpg"
                   alt="Iced Coffee"
@@ -111,7 +111,7 @@ const Home: React.FC = () => {
                     $4.50
                   </span>
                   <button
-                    className="inline-block bg-snackhouse-primary hover:bg-snackhouse-primary/90 text-white px-4 py-2 rounded hover:translate-y-[-1px] transition-all"
+                    className="inline-block bg-snackhouse-primary hover:bg-snackhouse-primary/90 text-white px-4 py-2 rounded hover:translate-y[--1px] transition-all"
                   >
                     Add
                   </button>
@@ -120,8 +120,8 @@ const Home: React.FC = () => {
             </div>
 
             {/* Treat 3: Ube Cake Slice */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow transform hover:-translate-y-1 group">
-              <div className="relative h-48">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
+              <div className="relative h-52">
                 <img
                   src="/kaoris/menu\\ 2.jpg"
                   alt="Ube Muffin"
@@ -144,7 +144,7 @@ const Home: React.FC = () => {
                     $4.00
                   </span>
                   <button
-                    className="inline-block bg-snackhouse-primary hover:bg-snackhouse-primary/90 text-white px-4 py-2 rounded hover:translate-y-[-1px] transition-all"
+                    className="inline-block bg-snackhouse-primary hover:bg-snackhouse-primary/90 text-white px-4 py-2 rounded hover:translate-y[--1px] transition-all"
                   >
                     Add
                   </button>
@@ -158,14 +158,14 @@ const Home: React.FC = () => {
         <section className="text-center">
           <Link
             to="/menu"
-            className="inline-block bg-snackhouse-primary hover:bg-snackhouse-primary/90 text-white px-8 py-4 rounded-lg font-medium transition-colors"
+            className="inline-block bg-snackhouse-primary hover:bg-snackhouse-primary/90 text-white px-10 py-5 rounded-xl font-medium transition-colors hover:scale-[1.02]"
           >
             View Full Menu
           </Link>
         </section>
       </main>
 
-      <footer className="bg-snackhouse-primary/5 px-4 py-8 mt-16">
+      <footer className="bg-snackhouse-primary/5 px-4 py-8 mt-20">
         <div className="max-w-7xl mx-auto text-center text-snackhouse-brown/60">
           <p>&copy; 2026 Kaori's Snackhouse. All rights reserved.</p>
         </div>
