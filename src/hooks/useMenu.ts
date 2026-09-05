@@ -29,7 +29,7 @@ const useMenu = () => {
     const fetchMenu = async () => {
       try {
         setLoading(true);
-        const response = await fetch('/src/data/menu.json');
+        const response = await fetch('/kaoris/menu.json');
         if (!response.ok) {
           throw new Error('Failed to fetch menu');
         }

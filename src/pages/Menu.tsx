@@ -1,21 +1,5 @@
 import useMenu from '../hooks/useMenu';
 
-interface MenuItem {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  image: string;
-  category: string;
-  tags: string[];
-}
-
-interface MenuCategory {
-  id: string;
-  name: string;
-  items: MenuItem[];
-}
-
 const Menu: React.FC = () => {
   const { menuData, loading, error } = useMenu();
 
