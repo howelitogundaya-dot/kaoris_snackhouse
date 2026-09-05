@@ -43,7 +43,7 @@ const Home: React.FC = () => {
       </div>
       <div className="home-location__details">
         <p>Food &amp; Drink · Open 1:30 pm to 8 pm</p>
-        <a href="https://www.facebook.com/search/pages/?q=Kaori%27s%20Snackhouse%20Tanza" target="_blank" rel="noreferrer" className="facebook-link">Find us on Facebook <span aria-hidden="true">↗</span></a>
+        <a href="https://www.facebook.com/people/Kaoris-Snack-House/61588641423644/?sk=reels_tab" target="_blank" rel="noreferrer" className="facebook-link">Find us on Facebook <span aria-hidden="true">↗</span></a>
       </div>
     </section>
     <footer className="home-footer"><span>© 2026 Kaori's Snackhouse</span><span>Fresh snacks, bright drinks, good merienda.</span></footer>
