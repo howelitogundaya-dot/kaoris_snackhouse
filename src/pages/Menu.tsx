@@ -5,9 +5,7 @@ import { menuSections, MenuSection, MenuItem } from '../data/menu';
 
 const sectionLabels: Record<string, string> = { burgers: 'Burgers', fries: 'Fries', milkshakes: 'Shakes', 'summer-drinks': 'Drinks', waffles: 'Waffles', combos: 'Combos', sodas: 'Sodas', 'fizzy-specials': 'Floats', 'ice-cream': 'Ice cream', hotdogs: 'Hotdogs', noodles: 'Noodles' };
 
-const MenuCard = ({ section }: { section: MenuSection }) => {
-  const { addItem } = useCart();
-
+const MenuCard = ({ section, onAdd }: { section: MenuSection; onAdd: (item: Omit<Parameters<ReturnType<typeof useCart>['addItem']>[0], 'quantity'>) => void }) => {
   return (
     <section className="menu-section" id={section.id}>
       <div className="menu-section__heading">
@@ -18,7 +16,7 @@ const MenuCard = ({ section }: { section: MenuSection }) => {
         <span className="menu-section__count">{section.items.length} items</span>
       </div>
       <div className="menu-grid">
-        {section.items.map((item) => <ConfigurableMenuItem key={item.id} item={item} addItem={addItem} />)}
+        {section.items.map((item) => <ConfigurableMenuItem key={item.id} item={item} addItem={onAdd} />)}
       </div>
       {section.notes && <div className="menu-notes">{section.notes.map((note) => <p key={note}>{note}</p>)}</div>}
     </section>
@@ -49,11 +47,25 @@ const ConfigurableMenuItem = ({ item, addItem }: { item: MenuItem; addItem: Retu
 
 const Menu: React.FC = () => {
   const [activeSection, setActiveSection] = useState('all');
-  const { totalItems } = useCart();
+  const [notice, setNotice] = useState<{ message: string; isRepeat: boolean } | null>(null);
+  const { cartItems, totalItems, addItem } = useCart();
   const visibleSections = activeSection === 'all' ? menuSections : menuSections.filter((section) => section.id === activeSection);
+  const handleAdd = (item: Parameters<typeof addItem>[0]) => {
+    const alreadyAdded = cartItems.some((cartItem) => cartItem.id === item.id);
+    addItem(item);
+    setNotice({
+      message: `${item.name} ${alreadyAdded ? 'is already in your order. Quantity increased.' : 'has been added to your order.'}`,
+      isRepeat: alreadyAdded,
+    });
+    window.setTimeout(() => setNotice(null), 3200);
+  };
 
   return (
     <div className="menu-page">
+      {notice && <div className={`cart-notice${notice ? ' is-visible' : ''}${notice.isRepeat ? ' is-repeat' : ''}`} role="status" aria-live="polite">
+        <span className="cart-notice__icon" aria-hidden="true">{notice.isRepeat ? '+1' : 'OK'}</span>
+        <span className="cart-notice__content"><strong>{notice.isRepeat ? 'Quantity updated' : 'Added to your order'}</strong><span>{notice.message}</span></span>
+      </div>}
       <header className="menu-hero">
         <div>
           <p className="eyebrow">Order for pickup through Facebook</p>
@@ -68,7 +80,7 @@ const Menu: React.FC = () => {
           {menuSections.map((section) => <button type="button" key={section.id} className={activeSection === section.id ? 'is-selected' : ''} onClick={() => setActiveSection(section.id)}>{sectionLabels[section.id]}</button>)}
         </div>
       </div>
-      <main className="menu-content">{visibleSections.map((section) => <MenuCard key={section.id} section={section} />)}</main>
+      <main className="menu-content">{visibleSections.map((section) => <MenuCard key={section.id} section={section} onAdd={handleAdd} />)}</main>
     </div>
   );
 };
