@@ -65,7 +65,7 @@ const Menu: React.FC = () => {
     <div className="min-h-screen bg-snackhouse-cream">
       <header className="bg-snackhouse-primary/5 px-4 py-8 border-b border-snackhouse-primary/10">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-3xl font-bold text-center text-snackhouse-primary mb-6">
+          <h1 className="text-3xl font-bold text-center text-snackhouse-primary mb-2">
             Our Menu
           </h1>
           <p className="text-center text-snackhouse-brown/60 max-w-2xl mx-auto">
@@ -84,6 +84,17 @@ const Menu: React.FC = () => {
                   {category.items.length} items
                 </span>
               </div>
+              {/* Optional category description */}
+              {category.id === 'drinks' && (
+                <p className="text-snackhouse-brown/60 mb-6 max-w-xl">
+                  From traditional Filipino coffee to refreshing fruit juices, our beverages are perfect for any time of day.
+                </p>
+              )}
+              {category.id === 'snacks' && (
+                <p className="text-snackhouse-brown/60 mb-6 max-w-xl">
+                  Indulge in our selection of baked goods and pastries, each made with care and authentic Filipino flavors.
+                </p>
+              )}
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {category.items.map((item: MenuItem) => (
                   <div

@@ -7,15 +7,18 @@ const Home: React.FC = () => {
       {/* Header with logo */}
       <header className="bg-snackhouse-primary/5 px-4 py-8 border-b border-snackhouse-primary/10">
         <div className="max-w-7xl mx-auto flex flex-col items-center">
-          <img
-            src="/kaoris/logo.jpg"
-            alt="Kaori's Snackhouse Logo"
-            className="h-24 w-auto mb-4"
-          />
-          <h1 className="text-4xl font-bold text-center text-snackhouse-primary mb-2">
+          <div className="relative h-12 w-12 mb-4">
+            <img
+              src="/kaoris/logo.jpg"
+              alt="Kaori's Snackhouse Logo"
+              className="h-12 w-12 rounded-full object-cover ring-2 ring-snackhouse-primary/20 shadow-sm"
+            >
+            </img>
+          </div>
+          <h1 className="text-3xl font-bold text-center text-snackhouse-primary mb-2">
             Welcome to Kaori's Snackhouse
           </h1>
-          <p className="text-xl text-center text-snackhouse-brown/80 max-w-2xl mx-auto">
+          <p className="text-lg text-center text-snackhouse-brown/80 max-w-2xl mx-auto">
             Fresh snacks made daily with love
           </p>
         </div>
@@ -26,7 +29,7 @@ const Home: React.FC = () => {
         <section className="mb-16 relative overflow-hidden">
           <div className="relative h-96 md:h-[400px] bg-snackhouse-primary/10 flex items-center justify-center overflow-hidden">
             {/* Background pattern or image */}
-            <div className="absolute inset-0 bg-[url('/kaoris/menu\\ 1.jpg')] bg-cover bg-center opacity-20"></div>
+            <div className="absolute inset-0 bg-[url('/kaoris/menu\\ 1.jpg')] bg-cover bg-center opacity-15"></div>
             <div className="relative z-10 text-center space-y-6">
               <h2 className="text-3xl font-bold text-snackhouse-primary">
                 Merienda Made Joyful

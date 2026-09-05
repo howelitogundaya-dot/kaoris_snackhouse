@@ -7,7 +7,7 @@
         {
           "id": "drink1",
           "name": "Iced Coffee",
-          "description": "Refreshing cold brew with a hint of vanilla",
+          "description": "Strong Filipino coffee served over ice with a touch of sugar",
           "price": 4.50,
           "image": "/kaoris/drinks 1.jpg",
           "category": "drinks"
@@ -15,15 +15,15 @@
         {
           "id": "drink2",
           "name": "Milk Tea",
-          "description": "Classic Taiwanese milk tea with tapioca pearls",
+          "description": "Classic Taiwanese-style milk tea with chewy tapioca pearls",
           "price": 5.00,
           "image": "/kaoris/drinks 2.jpg",
           "category": "drinks"
         },
         {
           "id": "drink3",
-          "name": "Fresh Fruit Juice",
-          "description": "Daily selection of freshly squeezed fruits",
+          "name": "Fresh Buko Juice",
+          "description": "Sweet young coconut water served fresh from the shell",
           "price": 4.00,
           "image": "/kaoris/drinks 3.jpg",
           "category": "drinks"
@@ -37,7 +37,7 @@
         {
           "id": "snack1",
           "name": "Chocolate Chip Cookie",
-          "description": "Warm, chewy cookies baked fresh daily",
+          "description": "Warm, chewy cookies baked fresh daily with premium chocolate chips",
           "price": 3.50,
           "image": "/kaoris/menu 1.jpg",
           "category": "snacks"
@@ -45,23 +45,23 @@
         {
           "id": "snack2",
           "name": "Ube Muffin",
-          "description": "Purple yam muffin with streusel topping",
+          "description": "Purple yam muffin with streusel topping, a Filipino favorite",
           "price": 4.00,
           "image": "/kaoris/menu 2.jpg",
           "category": "snacks"
         },
         {
           "id": "snack3",
-          "name": "Cheese Bread",
-          "description": "Soft bread roll filled with melted cheese",
+          "name": "Cheese Bread (Pandesal)",
+          "description": "Soft bread roll filled with melted cheese, perfect for merienda",
           "price": 3.00,
           "image": "/kaoris/menu 3.jpg",
           "category": "snacks"
         },
         {
           "id": "snack4",
-          "name": "Banana Loaf",
-          "description": "Moist banana bread with walnuts",
+          "name": "Banana Nut Loaf",
+          "description": "Moist banana bread with chopped walnuts and a hint of cinnamon",
           "price": 3.75,
           "image": "/kaoris/menu 4.jpg",
           "category": "snacks"
@@ -69,7 +69,7 @@
         {
           "id": "snack5",
           "name": "Ensaimada",
-          "description": "Filipino sweet roll with butter and sugar",
+          "description": "Filipino sweet roll topped with butter and sugar, coiled like a pastry",
           "price": 4.25,
           "image": "/kaoris/menu 5.jpg",
           "category": "snacks"
